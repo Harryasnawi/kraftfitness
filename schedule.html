@@ -41,7 +41,7 @@
 
     <header>
         <!--? Header Start -->
- <div id="loader-placeholder"></div>
+ <div id="navbar"></div>
         <!-- Header End -->
     </header>
     <main>
@@ -639,6 +639,18 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
-    
+    <script>
+    fetch("components/navbar.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+
+            // 🔥 Re-initialize mobile menu AFTER navbar loads
+            $('#navigation').slicknav({
+                prependTo: ".mobile_menu",
+                allowParentLinks: true
+            });
+        });
+</script>
     </body>
 </html>

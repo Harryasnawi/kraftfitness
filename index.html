@@ -63,7 +63,7 @@
     <!-- Preloader end -->
     <header>
         <!--? Header Start -->
-        <div id="loader-placeholder"></div>
+        <div id="navbar"></div>
 
 
         <!-- Header End -->
@@ -1191,14 +1191,20 @@ to achieve your fitness goals safely and effectively.
     <script src="./assets/js/hover-direction-snake.min.js"></script>
 
 
+<script>
+    fetch("components/navbar.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
 
-    <script>
-        fetch("components/navbar.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("navbar").innerHTML = data;
+            // 🔥 Re-initialize mobile menu AFTER navbar loads
+            $('#navigation').slicknav({
+                prependTo: ".mobile_menu",
+                allowParentLinks: true
             });
-    </script>
+        });
+</script>
+
 
 
     <!-- contact js -->

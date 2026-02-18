@@ -45,4 +45,30 @@
     30% {
         transform: translateY(-15px);
     }
+}/* FORCE mobile menu full width */
+.slicknav_menu {
+    width: 100% !important;
+    position: relative !important;
+    right: 0 !important;
+    left: 0 !important;
+}
+
+.slicknav_nav {
+    width: 100% !important;
+    position: relative !important;
+    right: 0 !important;
+    left: 0 !important;
+}
+
+/* Make dropdown appear below hamburger */
+.slicknav_nav {
+    background: whitesmoke;
+}
+
+.slicknav_nav ul {
+    width: 100% !important;
+}
+
+.slicknav_nav li {
+    text-align: left;
 }

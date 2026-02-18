@@ -29,7 +29,7 @@
 </div>
 
 <header>
-    <div id="loader-placeholder"></div>
+    <div id="navbar"></div>
 </header>
 
 <main>
@@ -117,11 +117,17 @@
 <script src="./assets/js/bootstrap.min.js"></script>
 <script src="./assets/js/main.js"></script>
 <script>
-fetch("/components/navbar.html")
-  .then(response => response.text())
-  .then(data => {
-      document.getElementById("loader-placeholder").innerHTML = data;
-  });
+    fetch("components/navbar.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+
+            // 🔥 Re-initialize mobile menu AFTER navbar loads
+            $('#navigation').slicknav({
+                prependTo: ".mobile_menu",
+                allowParentLinks: true
+            });
+        });
 </script>
 
 </body>
